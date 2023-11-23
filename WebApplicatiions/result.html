@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Formula Learning App</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Chemical Formula Learning App</h1>
+        <p>Enter the formula name to learn more!</p>
+    </header>
+
+    <form action="/submit" method="post">
+        <label for="formulaName">Enter the Formula Name:</label>
+        <input type="text" id="formulaName" name="formulaName" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <section id="result">
+        <h2>Formula Result</h2>
+        <p id="formulaDisplay">
+            {% if result_formula %}
+                The formula for {{ formula_name }} is: {{ result_formula }}
+            {% else %}
+                {{ result_formula }}
+            {% endif %}
+        </p>
+    </section>
+</body>
+</html>
+
+
